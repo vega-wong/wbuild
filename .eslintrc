@@ -1,0 +1,10 @@
+  {
+    "root": true,
+    "extends": "yidejia",
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "rules": {
+    }
+  }

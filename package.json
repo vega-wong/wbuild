@@ -1,0 +1,67 @@
+{
+  "name": "v-build",
+  "version": "0.0.1",
+  "description": "build fe source by webpack",
+  "main": "index.js",
+  "bin": {
+    "vbuild": "./bin/vbuild.js"
+  },
+  "scripts": {
+    "test:build": "npm run build && cd test && ../bin/vbuild.js --config ./webpack/dev.js",
+    "test:server": "",
+    "linter": "eslint --ignore-pattern /node_modules/ \"./src/**/*.es6\"",
+    "build": "npm run linter && rm -rf dist && babel src --out-dir lib",
+    "watch": "babel src --out-dir lib -w",
+    "test": "mocha ./test --recursive --compilers js:babel-register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vega-wong/wbuild.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vega-wong/wbuild/issues"
+  },
+  "homepage": "https://github.com/vega-wong/wbuild#readme",
+  "dependencies": {
+    "assets-webpack-plugin": "^3.5.0",
+    "autoprefixer": "^6.6.0",
+    "babel": "^6.5.2",
+    "babel-eslint": "^7.1.1",
+    "babel-istanbul": "^0.12.1",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-es2015-ie": "^6.6.2",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "clean-webpack-plugin": "^0.1.14",
+    "coffee-loader": "^0.7.2",
+    "coffee-script": "^1.12.2",
+    "colors": "^1.1.2",
+    "css-loader": "^0.26.1",
+    "debug": "^2.6.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "img-assets-webpack-plugin": "^0.0.3",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "node-sass": "^4.1.1",
+    "open-browser-webpack-plugin": "^0.0.3",
+    "postcss-loader": "^1.2.1",
+    "rucksack-css": "^0.9.1",
+    "sass-loader": "^4.1.1",
+    "webpack": "^1.14.0",
+    "webpack-dashboard": "^0.2.0",
+    "webpack-dev-server": "^1.16.2",
+    "yargs": "^6.5.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "eslint": "^3.12.2",
+    "eslint-config-yidejia": "^1.1.4",
+    "mocha": "^3.2.0",
+    "should": "^11.1.2"
+  }
+}
